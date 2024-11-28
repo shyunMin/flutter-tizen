@@ -1,4 +1,4 @@
-﻿using Tizen.Flutter.Embedding;
+using Tizen.Flutter.Embedding;
 
 namespace Runner
 {
