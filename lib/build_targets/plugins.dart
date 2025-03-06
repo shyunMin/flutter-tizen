@@ -246,7 +246,7 @@ APPNAME = flutter_plugins
 type = sharedLib
 profile = $profile-$apiVersion
 
-USER_LFLAGS = -Wl,-rpath='\$\$ORIGIN'
+USER_LFLAGS = -Wl,-rpath='\$\$ORIGIN:\$\$ORIGIN/../bin/.res_mount/'
 USER_LIBS = pthread ${userLibs.join(' ')}
 ''');
 

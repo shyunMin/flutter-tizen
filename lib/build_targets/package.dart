@@ -120,13 +120,10 @@ class DotnetTpk extends TizenPackage {
 
     final Directory pluginsDir =
         environment.buildDir.childDirectory('tizen_plugins');
-    final Directory pluginsResDir = pluginsDir.childDirectory('res');
-    if (pluginsResDir.existsSync()) {
-      copyDirectory(pluginsResDir, resDir);
-    }
     final Directory pluginsLibDir = pluginsDir.childDirectory('lib');
     if (pluginsLibDir.existsSync()) {
-      copyDirectory(pluginsLibDir, libDir);
+      File plugin = pluginsLibDir.childFile('libflutter_plugins.so');
+      plugin.copySync(libDir.childFile('libflutter_plugins.so').path);
     }
 
     assert(tizenSdk != null);
